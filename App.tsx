@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 import Button from './components/Button';
-import GeoLocation from '@darkube/geolocation-service';
+import * as GeoLocation from '@tenmednetwork/geolocation-tracker';
 import { useEffect, useState } from 'react';
 
 const App = () => {
@@ -52,7 +52,7 @@ const App = () => {
         >
           <Button
             onPress={() => {
-              GeoLocation.stop();
+              GeoLocation.stopTracking();
             }}
             style={{ backgroundColor: '#303135' }}
             title="Cancel"
@@ -60,7 +60,7 @@ const App = () => {
           <View style={{ width: 10 }}></View>
           <Button
             onPress={() => {
-              GeoLocation.start({});
+              GeoLocation.startTracking({});
             }}
             title="Start, Tracking"
           />
